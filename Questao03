@@ -1,0 +1,26 @@
+
+package application;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class ArraysBidimensionais {
+	
+	public static void main(String[] args) {
+		
+		int framex40[][] = new int [40][40];
+		int cont = 0;
+		for (int linha = 0; linha < framex40.length; linha++) {
+			for (int coluna = 0; coluna < framex40[linha].length; coluna++) {
+				
+				Random valor = new Random();
+				framex40[linha][coluna] = valor.nextInt(255);
+				System.out.printf("Valor: %d.\n", framex40[linha][coluna]);
+				cont += 1;
+			}
+			
+		}
+		System.out.println("O valor de count foi: " + cont + ".");
+	}
+
+}
