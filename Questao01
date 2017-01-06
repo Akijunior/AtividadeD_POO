@@ -1,0 +1,40 @@
+package application;
+
+import javax.swing.JOptionPane;
+
+import java.util.Arrays;
+import java.util.Collections;
+public class NotasAlunos {
+	
+	public static void main(String[] args) {
+		
+		double[] notas = new double[5];
+		double media = 0;
+		for(int i = 0; i < 5; i++) {
+			double notaAluno = Float.parseFloat(JOptionPane.showInputDialog("Diga qual foi a nota do aluno: "));
+			notas[i] = notaAluno;
+		}
+
+		for (int ip = notas.length -1; ip >= 0 ; ip--) {
+
+			for (int j = 0; j < ip; j++) {
+
+				if (notas[j] < notas[j+1]) {
+
+					double variavelTemporaria = notas[j];
+
+					notas[j] = notas[j+1];
+
+					notas[j+1] = variavelTemporaria;
+				}
+			}
+		}
+		
+		for (int cada = 0; cada < notas.length; cada++) {
+			System.out.printf("Nota: %.2f\n", notas[cada]);
+			media += notas[cada];
+		}
+		JOptionPane.showMessageDialog(null, "A media geral dos alunos foi " + media);
+		}
+}
+	
