@@ -1,0 +1,44 @@
+
+package application;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Random;
+
+public class ParEImpar {
+	
+	public static void main(String[] args) {
+			
+		Random valor = new Random();
+		
+		int[] par = new int[10]; int[] impar = new int[10];
+		int contPar = 0, contImpar = 0;
+		int cont = 0;
+		for (int i = 0; i < 10; i++) {
+			
+			int valorGerado = valor.nextInt(20);
+			if (valorGerado % 2 == 0) {
+				par[contPar] = valorGerado;
+				contPar ++;
+			}
+			
+			else if ((valorGerado % 2 != 0)) {
+				impar[contImpar] = valorGerado;
+				contImpar ++;
+			}
+			cont ++;
+		}
+		System.out.println("RESULTADOS:\n\n");
+		for (int ii : impar) {
+			if (ii != 0)
+				System.out.println("Valor Impar: " + ii);
+			
+		}
+		for (int ip : par) {
+			if (ip != 0)
+				System.out.println("Valor par: " + ip);
+			
+		}
+		
+}
+}
